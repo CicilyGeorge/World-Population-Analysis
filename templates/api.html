@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>API Documentation</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">    
+  <!-- Our CSS -->
+  <link rel="stylesheet" type="text/css" href= "../static/css/style.css">
+</head>
+
+<body style="margin-left:15%;">
+<!-- Navbar -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid navbar-custom">
+    <div class="row">
+      <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <span class="sr-only">Toggle Navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>       
+      </button>
+      <a class="navbar-brand" id="logo" href="/">World Population</a>
+      </div>
+  <div class="collapse navbar-collapse" id="myNavbar">
+    <ul class="nav navbar-nav" id="ournav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Plots</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="Max Temperature.html">Max Temperature</a>
+          <a class="dropdown-item" href="Humidity.html">Humidity</a>
+          <a class="dropdown-item" href="Cloudiness.html">Cloudiness</a>
+          <a class="dropdown-item" href="Wind Speed.html">wind Speed</a>
+        </div>
+      </li>
+      <li><a class="nav-link" href="countries-population">Countries</a></li>
+      <li><a class="nav-link" href="Data">Table Data</a></li>
+      <li><a class="nav-link" href="api">API Documentation</a></li>
+      <li><a class="nav-link" href="summary">Resources</a></li>
+      <li><a class="nav-link" href="contact">Meet the Team</a></li>
+    </ul>
+  </div>
+  </div>
+  </div>
+</nav>
+<!-- End Navbar -->
+
+  <div clas="container" id="page" style="margin-top: 90px;">
+    <div class="row">
+
+        <div class="col-md-12">
+          <h2 style="font-size: 40px; color: rgb(145, 101, 20);">World population dataset API Documentation</h2>
+          <hr style="height:2px;border-width:0;background-color:rgb(238, 234, 234)">
+          <h4 style="margin-top: 50px;">Endpoints</h4>
+        </div>
+        <div class="col-md-3 col-sm-12">
+          <ul>
+            <li><a href="api/population/world">World population</a></li>
+            <li><a href="api/population/countries">Population by Country</a></li>
+            <li><a href="api/population/cities">Population by City</a></li>
+            <li><a href="api/population/density">Population Density</a></li>
+            <li><a href="api/population/birth">Birth Rate</a></li>
+            <li><a href="api/population/death">Death Rate</a></li>
+            <li><a href="api/population/sex-ratio">Male to Female Ratio</a></li>
+        </ul>
+        </div>
+
+        <div class="col-md-9 col-sm-12">
+            <ul>
+                <hr>
+                <li>
+                  <a href="api/population/world">World Population Actuals and Projections</a>
+                  <p>Route:  /api/population/world</p>
+                  <p>Returns the World population data.</p>
+                  <h4>Example Output</h4>
+                  <img src="../static/images/popWorldAPI.png" max-height="500px">
+                </li>
+                <hr>
+                <li><a href="api/population/countries">Population by Country</a></li>
+                <p>Route:  /api/population/countries</p>
+                  <p>Returns the population of countries in the years 2019 to 2015 and 2010, 2000, 1990.</p>
+                  <h4>Example Output</h4>
+                  <img src="../static/images/popCountriesAPI.png" max-height="500px">
+                <hr>
+                <li>
+                  <a href="api/population/cities">Population by City</a>
+                  <p>Route:  /api/population/cities</p>
+                  <p>Returns the population of cities in 2019 and 2020.</p>
+                  <h4>Example Output</h4>
+                  <img src="../static/images/popCitiesAPI.png" max-height="500px">
+                </li>
+                <hr>
+                <li>
+                  <a href="api/population/density">Population Density</a>
+                  <p>Route:  /api/population/density</p>
+                  <p>Returns the population density data.</p>
+                  <h4>Example Output</h4>
+                  <img src="../static/images/popDensityAPI.png" max-height="500px">
+                </li>
+                <hr>
+                <li>
+                  <a href="api/population/birth">Birth Rate</a>
+                  <p>Route:  /api/population/birth</p>
+                  <p>Returns the birth rate of countries.</p>
+                  <h4>Example Output</h4>
+                  <img src="../static/images/popBirthAPI.png" max-height="500px">
+                </li>
+                <hr>
+                <li>
+                  <a href="api/population/death">Death Rate</a>
+                  <p>Route:  /api/population/death</p>
+                  <p>Returns the death rate of countries.</p>
+                  <h4>Example Output</h4>
+                  <img src="../static/images/popDeathAPI.png" max-height="500px">
+                </li>
+                <hr>
+                <li>
+                  <a href="api/population/sex-ratio">Male to Female Ratio</a>
+                  <p>Route:  /api/population/sex-ratio</p>
+                  <p>Returns the sex ratio of countries.</p>
+                  <h4>Example Output</h4>
+                  <img src="../static/images/popSexRatioAPI.png" max-height="500px">
+                </li>
+                <hr>
+            </ul>
+        </div>
+    </div>
+  </div>
+  </body>
+</html>

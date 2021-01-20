@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Table Data</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">    
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href= "../static/css/style.css">
+    <!-- Webix -->
+    <link rel="stylesheet" href="//cdn.webix.com/edge/webix.css" type="text/css"> 
+    <script src="//cdn.webix.com/edge/webix.js" type="text/javascript"></script>  
+    <!-- D3 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  </head>
+
+  <body>
+
+
+  <!-- Navbar -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid navbar-custom">
+    <div class="row">
+      <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <span class="sr-only">Toggle Navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>       
+      </button>
+      <a class="navbar-brand" id="logo" href="/">World Population</a>
+      </div>
+  <div class="collapse navbar-collapse" id="myNavbar">
+    <ul class="nav navbar-nav" id="ournav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Plots</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="Max Temperature.html">Max Temperature</a>
+          <a class="dropdown-item" href="Humidity.html">Humidity</a>
+          <a class="dropdown-item" href="Cloudiness.html">Cloudiness</a>
+          <a class="dropdown-item" href="Wind Speed.html">wind Speed</a>
+        </div>
+      </li>
+      <li><a class="nav-link" href="countries-population">Countries</a></li>
+      <li><a class="nav-link" href="Data">Table Data</a></li>
+      <li><a class="nav-link" href="api">API Documentation</a></li>
+      <li><a class="nav-link" href="summary">Resources</a></li>
+      <li><a class="nav-link" href="contact">Meet the Team</a></li>
+    </ul>
+  </div>
+  </div>
+  </div>
+</nav>
+<!-- End Navbar -->
+
+  <!-- header part -->
+  <div class="container-fluid bg-3 text-center">  
+  <div class="container">    
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="text-center" style="margin-top: 90px;">Population Actual and Prediction</h3><br>
+            <hr>
+            <h4 style="text-align: center; color: rgb(78, 70, 25); font-size: 15px;"><b>The table below can be sorted by clicking on the header of a column.</b></h4> 
+            <!-- <div id="aaa"></div> 
+            <script type="text/javascript" src="../static/js/logic_table.js"></script> -->
+      </div>
+    </div>
+  </div> 
+  </div>            
+  
+  <!-- Webix Table -->
+    <script type="text/javascript" charset="utf-8">
+
+    d3.json("/api/population/countries").then((dataset)=> {
+    console.log(dataset[0].data)
+              
+    dataForWebix = dataset[0].data
+    var datatable = webix.ui({
+        view:"datatable", 
+        columns:[
+            // { id:"id",    header:"",              width:50},
+            { id:"Country",   header:"Country",   sort:"string",  width:250},
+            { id:"rank",   header:"Rank",   sort:"int",  width:100},
+            { id:"1970",   header:"1970",   sort:"int",  width:150},
+            { id:"1980",   header:"1980",   sort:"int",  width:150},
+            { id:"1990",   header:"1990",   sort:"int",  width:150},
+            { id:"2000",   header:"2000",   sort:"int",  width:150},
+            { id:"2015",   header:"2015",   sort:"int",  width:150},
+            { id:"2016",   header:"2016",   sort:"int",  width:150},
+            { id:"2017",   header:"2017",   sort:"int",  width:150},
+            { id:"2018",   header:"2018",   sort:"int",  width:150},
+            { id:"2019",   header:"2019",   sort:"int",  width:150},
+            { id:"2020",   header:"2020",   sort:"int",  width:150},
+            { id:"2030",   header:"2030",   sort:"int",  width:150},
+            { id:"2050",   header:"2050",   sort:"int",  width:100},
+            ],
+        data: dataForWebix,
+          rows:[
+          { view:"template", type:"header", template:"Films" },
+          { view:"datatable", autoConfig:true}
+          ]
+          });
+          });  
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Population World</title>
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+  <!-- D3 JavaScript -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin=""/>
+  <!-- Jsuits library for Dropdown -->
+  <link rel="stylesheet" href="https://jsuites.net/v3/jsuites.css" type="text/css" />
+  <!-- Our CSS -->
+  <link rel="stylesheet" href="../static/css/style.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/apiDoc.css">  
+</head>
+
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid navbar-custom">
+    <div class="row">
+      <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <span class="sr-only">Toggle Navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>       
+      </button>
+      <a class="navbar-brand" id="logo" href="/">World Population</a>
+      </div>
+  <div class="collapse navbar-collapse" id="myNavbar">
+    <ul class="nav navbar-nav" id="ournav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Plots</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="Max Temperature.html">Max Temperature</a>
+          <a class="dropdown-item" href="Humidity.html">Humidity</a>
+          <a class="dropdown-item" href="Cloudiness.html">Cloudiness</a>
+          <a class="dropdown-item" href="Wind Speed.html">wind Speed</a>
+        </div>
+      </li>
+      <li><a class="nav-link" href="countries-population">Countries</a></li>
+      <li><a class="nav-link" href="Data">Table Data</a></li>
+      <li><a class="nav-link" href="api">API Documentation</a></li>
+      <li><a class="nav-link" href="summary">Resource</a></li>
+      <li><a class="nav-link" href="contact">Our Team</a></li>
+    </ul>
+  </div>
+  </div>
+  </div>
+</nav>
+<!-- End Navbar -->
+
+<!-- World Map -->
+<div class="container-fluid bg-3 text-center" style="margin-top: 50px ;">  
+  <div class="container">   
+    <!-- <h3 class="text-center">World Population at a Glance</h3><br> -->
+    <h4 id="total_pop">World Population 2020: </h4>
+    <div class="row">
+      <div class="tabbable">
+        <ul class="nav nav-tabs">
+            <li class="active"><a class="atab" href="#a_tab" data-toggle="tab">Population 2020</a></li>
+            <li><a class="btab" href="#b_tab" data-toggle="tab">Population Density 2019</a></li>
+            <li><a class="ctab" href="#c_tab" data-toggle="tab">Population Growth 2019</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="a_tab">
+                <!-- <h1>Population 2020</h1> -->
+                <acontent><div class="map" id="map"></div></acontent>
+            </div>
+            <div class="tab-pane" id="b_tab">
+                <!-- <h1>Population Density 2019</h1> -->
+                <bcontent><div class="map" id="map_density"></div></bcontent>
+            </div>
+            <div class="tab-pane" id="c_tab">
+              <!-- <h1>Population Growth 2019</h1> -->
+              <ccontent><div class="map" id="map_growth"></div></ccontent>
+          </div>
+        </div>
+    </div>
+    </div>
+  </div>
+  </div>
+  </div><br>
+
+  
+  
+<!-- End World Map -->
+  <!-- Data Analysis -->
+  <div class="container-fluid bg-3 text-center"> 
+    <div class="container">    
+
+    </div>
+  </div>   
+         
+  <!-- End Data Analysis -->
+
+
+ <!-- API key -->
+ <script src="../static/js/config.js"></script>
+<!-- Leaflet JavaScript -->
+<script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q==" crossorigin=""></script>
+ <!-- Jsuits library for Dropdown -->
+ <script src="https://jsuites.net/v3/jsuites.js"></script>
+<!-- Plotly JavaScript -->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<!-- Our JavaScript -->
+<script src="../static/js/logic_worldPop.js"></script>
+<script src="../static/js/logic_map.js"></script>
+<script src="../static/js/logic_map_density.js"></script>
+<script src="../static/js/logic_map_growth.js"></script>
+<script src="../static/js/logic_plotly.js"></script>
+
+
+<script>
+  $.ajaxSetup ({
+      // Disable caching of AJAX responses
+      // Used when debugging
+      cache: false
+  });
+
+  $.getScript("../static/js/logic_map.js");
+  $(".atab").click(function() {
+      $.getScript("../static/js/logic_map.js");
+  })
+
+  $(".btab").click(function() {
+      $.getScript("../static/js/logic_map_density.js");
+  })
+  $(".ctab").click(function() {
+      $.getScript("../static/js/logic_map_growth.js");
+  })
+</script> 
+</body>
+</html>

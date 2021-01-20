@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Population World</title>
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin=""/>
+  <!-- Jsuits library for Dropdown -->
+  <link rel="stylesheet" href="https://jsuites.net/v3/jsuites.css" type="text/css" />
+  <!-- Our CSS -->
+  <link rel="stylesheet" href="../static/css/style.css">
+  <!-- Linking to css and javascript file under static folder -->
+  <link rel="stylesheet" type="text/css" href= "../static/css/apiDoc.css">  
+</head>
+
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid navbar-custom">
+    <div class="row">
+      <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <span class="sr-only">Toggle Navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>       
+      </button>
+      <a class="navbar-brand" id="logo" href="/">World Population</a>
+      </div>
+  <div class="collapse navbar-collapse" id="myNavbar">
+    <ul class="nav navbar-nav" id="ournav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Plots</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="Max Temperature.html">Max Temperature</a>
+          <a class="dropdown-item" href="Humidity.html">Humidity</a>
+          <a class="dropdown-item" href="Cloudiness.html">Cloudiness</a>
+          <a class="dropdown-item" href="Wind Speed.html">wind Speed</a>
+        </div>
+      </li>
+      <li><a class="nav-link" href="countries-population">Countries</a></li>
+      <li><a class="nav-link" href="Data">Table Data</a></li>
+      <li><a class="nav-link" href="api">API Documentation</a></li>
+      <li><a class="nav-link" href="summary">Resources</a></li>
+      <li><a class="nav-link" href="contact">Meet the Team</a></li>
+    </ul>
+  </div>
+  </div>
+  </div>
+</nav>
+<!-- End Navbar -->
+
+<!-- World Map -->
+<div class="container-fluid bg-3 text-center" style="margin-top: 100px ;">  
+  <div class="container">   
+    <h3 class="text-center">World Population at a Glance</h3><br>
+    <div class="row">
+      <div class="thumbnail" style="background-color:rgb(110, 101, 84); height: 560px; width: 1210px;margin-left: auto;margin-right: auto;">
+      <!-- The div that holds our map -->
+      <div class="col-md-12 center" id="map"></div>
+    </div>
+  </div>
+  </div>
+  </div><br>
+  <div class="container-fluid bg-3 text-center" style="margin-top: 30px ;">  
+    <div class="container"> 
+      <div class="row">
+      <div class="col-xs-6 col-md-4"><a href="https://www.w3schools.com/" style="font-size: 30px;">Population Density</a></div> 
+      <div class="col-xs-6 col-md-4"><a href="https://www.w3schools.com/" style="font-size: 30px;">Birth Rate</a></div> 
+      <div class="col-xs-6 col-md-4"><a href="https://www.w3schools.com/" style="font-size: 30px;">Death Rate</a></div> 
+      </div> 
+    </div> 
+  </div> 
+<!-- End World Map -->
+
+  <!-- Data Analysis -->
+  <h3 class="text-center" style="margin-top: 90px;">Data Analysis</h3><br>
+  <hr style="height:3px;border-width:0;background-color:rgba(184, 174, 196, 0.911)">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-2" style="margin-bottom: 80px;">
+    <h4 class='page-header'>Select a country</h4>
+    <div id="dropdown"></div>    
+  </div>
+  </div>
+  <div class="row" style="margin-left: 20px; margin-bottom: 200px;">
+    <div class="col-md-2"></div>
+  <div class="col-md-4">  
+  <div id="line"></div>
+  </div>
+  <div class="col-md-4">
+  <div id="pie"></div>   
+  </div> 
+  <div class="col-md-2"></div> 
+  </div>   
+  <!-- End Data Analysis -->
+  
+
+<!-- Leaflet JavaScript -->
+<script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q==" crossorigin=""></script>
+<!-- D3 JavaScript -->
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<!-- API key -->
+<script src="../static/js/config.js"></script>
+<!-- Jsuits library for Dropdown -->
+<script src="https://jsuites.net/v3/jsuites.js"></script>
+<!-- Plotly JavaScript -->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>    
+<!-- Our JavaScript -->
+<script src="../static/js/logic_map.js"></script>
+<script src="../static/js/logic_plotly.js"></script>
+<script type="text/javascript" src="../static/js/logic_dropdown.js"></script>
+</body>
+</html>

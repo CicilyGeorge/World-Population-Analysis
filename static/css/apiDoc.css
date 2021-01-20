@@ -1,0 +1,17 @@
+body {
+    margin-left:5%;
+}
+
+h2 h4 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+ul li {
+    margin-bottom: 10px;
+} 
+
+ul li a {
+    font-size: 16px;
+    color: #28a1c5;
+} 

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Resources</title>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">  
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href= "../static/css/style.css">
+  </head>
+
+  <body>
+<!-- Navbar -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid navbar-custom">
+    <div class="row">
+      <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <span class="sr-only">Toggle Navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>       
+      </button>
+      <a class="navbar-brand" id="logo" href="/">World Population</a>
+      </div>
+  <div class="collapse navbar-collapse" id="myNavbar">
+    <ul class="nav navbar-nav" id="ournav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Plots</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="Max Temperature.html">Max Temperature</a>
+          <a class="dropdown-item" href="Humidity.html">Humidity</a>
+          <a class="dropdown-item" href="Cloudiness.html">Cloudiness</a>
+          <a class="dropdown-item" href="Wind Speed.html">wind Speed</a>
+        </div>
+      </li>
+      <li><a class="nav-link" href="countries-population">Countries</a></li>
+      <li><a class="nav-link" href="Data">Table Data</a></li>
+      <li><a class="nav-link" href="api">API Documentation</a></li>
+      <li><a class="nav-link" href="summary">Resources</a></li>
+      <li><a class="nav-link" href="contact">Meet the Team</a></li>
+    </ul>
+  </div>
+  </div>
+  </div>
+</nav>
+<!-- End Navbar -->
+
+<div class="container-fluid bg-3">
+  <div class="container"> 
+    <h3 id="sumpar">Summary</h3><br>
+    <hr>
+    <p id="sumintro">Among many environmental issues, population growth is of paramount importance because this factor has a great physical impact on its regional and global environment.
+    This website aims to investigate this major factor and present the result by statistical visualisation.</p>
+    <h3 id="sumpar">Data</h3><br>
+    <hr>
+    <p id="sumintro">The analysis is based on the 10 most populated Countries and cities for an 8-year period, and predicts their populations in 2030 and 2050. In addition, the growth rate and population ratio are studied in this project.</p>
+    <p id="sumintro" style="margin-top: 30px;"> Generally, in this analysis an attempt has been made to answer the following questions:</p>
+    <ol id="sumlist">
+      <li>What are the 10 countries with the largest population?</li>
+      <li>What is the percentage of the top 10 countries compared to the rest of the world?</li>       
+      <li>Are the top 10 cities located in the top 10 countries?</li>       
+      <li>Change in population from 2019 to 2020?</li>
+    </ol>
+    <h3 id="sumpar">Dataset</h3><br>
+    <hr>
+    <p id="sumintro">For this purpose we scraped our dataset from <a href="https://worldpopulationreview.com">https://worldpopulationreview.com</a></p>
+    <h3 id="sumpar">Process</h3><br>
+    <hr>
+    <p id="sumintro">We tried to follow all the requirements included in the instructions.</p>
+    <img src="../static/images/web_diagram.png" height="400px" width="1000px">
+    <p id="sumintro" style="margin-top: 50px;">First, we scraped data from a valid website. Then, cleaned the dataset (ELT) and created a flask python for other users's convenience. 
+    Using JavaScript for creating the map and plots and finally, presented the data on dashboard by using html and css.</p>
+    <h3 id="sumpar">Tools</h3>
+    <hr>
+    <p id="sumintro">The following tools have been used in this project:</p>
+    <ul id="sumlist" style="margin-bottom: 200px;">
+      <li>Scrape data/ELT: Python, Pandas</li>
+      <li>Database/ELT: MongoDB</li>
+      <li>API: Flask</li>
+      <li>Visualisation: Javascript (D3, Plotly, Leaflet, jSuites)</li>    
+      <li>HTML/CSS: BootStrap</li>
+    </ul>    
+  </div>
+</div>
+</body>
+</html>
