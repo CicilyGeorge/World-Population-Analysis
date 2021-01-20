@@ -4,7 +4,7 @@ ETL with web scraping, python and mongoDB. Flask  app with API endpoints. Visual
 
 ### Data Source: 
 
-Scrape
+web scrape
 * https://worldpopulationreview.com
 * https://www.iban.com/country-codes
 
