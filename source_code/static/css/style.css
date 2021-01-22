@@ -1,0 +1,477 @@
+body {
+  background-image: url(../images/cool-background.jpg);
+  background-repeat: repeat;
+  background-position: center;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  padding-top: 70px;
+}
+
+#country h3{
+  font-size: 40px;
+  color: rgb(102, 74, 14);
+
+}
+
+.page-header {
+  font-size: 30px;
+  color: rgb(102, 74, 14);
+
+}
+
+h3 {
+  font-size: 50px;
+  color: rgb(185, 134, 24);
+}
+
+h4 {
+  font-size: 20px;
+  color: #be9d7e;
+}
+
+h5 {
+  font-size: 15px;
+  color: #f1e4d7;
+}
+
+td{
+  font-size: 15px;
+}
+
+th{
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(185, 134, 24);
+}
+
+hr {
+  height:3px;
+  border-width:0;
+  background-color:rgba(184, 174, 196, 0.911);
+}
+
+#sumpar {
+  margin-top: 100px;
+  font-size: 40px;
+  color:rgb(185, 134, 24);
+}
+
+#sumintro {
+  line-height: 40px;
+  font-size: 20px;
+  color: rgb(95, 83, 68);
+}
+
+#sumlist {
+  font-size: 20px;
+  line-height: 40px;
+  margin-left: 30px;
+  color: rgb(95, 83, 68);
+}
+
+#team-par-head{
+  color: rgb(143, 114, 21);
+  font-size: 30px;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+#team-par{
+  color: rgb(143, 114, 21);
+  font-size: 20px;
+  margin-top: 30px;
+  margin-left: 50px;
+}
+
+.map {
+  width: 100%;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto; 
+  margin-bottom: 50px;
+}
+
+.box {
+  height: 400px;
+  padding: 10px;
+  color: #fff;
+  background: rgb(196, 185, 164);
+}
+
+.box2 {
+  height: 100px;
+  padding: 10px;
+  color: #fff;
+  background: rgb(196, 185, 164);
+}
+
+.navbar {
+  background-color: rgb(66, 66, 66);
+  border-color: #252323;
+  box-shadow: 6px 6px 10px rgb(34, 33, 33);
+  height: 100px;
+}
+
+#logo {
+  font-size:55px;
+  margin-left: 50px;
+  margin-top: 15px;
+  color:rgb(201, 143, 19);
+}
+
+#ournav {
+  font-size:20px;
+  margin-left: 80px;
+  margin-top: 18px;
+}
+
+.nav-link{
+  font-size:23px;
+}
+
+.container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10px;
+}
+
+.leaflet-pane leaflet-map-pane {
+  transform: translate3d(103.841px, -25.2109px, 0px);
+}
+
+.leaflet-container {
+  font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.leaflet-popup-content {
+  text-align: center;
+}
+.center {
+  display: block;
+
+}
+.legend {
+  padding: 6px 8px;
+  font: 12px Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #555;
+  background: #fff;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.legend ul {
+  padding: 0;
+  margin: 0;
+  clear: both;
+  list-style-type: none;
+}
+
+.legend li {
+  display: inline-block;
+  width: 30px;
+  height: 22px;
+}
+
+.legend .min {
+  float: left;
+  padding-bottom: 5px;
+}
+
+.legend .max {
+  float: right;
+}
+
+.info { 
+  padding: 6px 8px; 
+  font: 16px/18px Arial, Helvetica, sans-serif; 
+  background: white; 
+  background: rgba(255,255,255,0.8); 
+  box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; 
+} 
+.info h4 { 
+  margin: 0 0 5px; 
+  color: #777; 
+  font-size: 18px;
+}
+.legend { 
+  text-align: left; 
+  line-height: 18px; 
+  color: rgb(51, 50, 50); 
+} 
+.legend i { 
+  width: 18px; 
+  height: 18px; 
+  float: left; 
+  margin-right: 8px; 
+  opacity: 0.7; 
+}
+
+/* Add a gray background color and some padding to the footer */
+footer {
+  background-color: #f2f2f2;
+  padding: 25px;
+}
+
+.tabbable {
+  margin-top: 20px;
+}
+
+/* Top 10 Countries List */
+.list-type5{
+  /* width:600px; */
+  margin:0 auto;
+  }
+  .list-type5 ol {
+  list-style-type: none;
+  /* list-style-type: decimal !ie; IE 7- hack */
+  margin: 0;
+  margin-left: 1em;
+  padding: 0;
+  counter-reset: li-counter;
+  }
+  .list-type5 ol li{
+  position: relative;
+  margin-bottom: 1.5em;
+  padding: 0.5em;
+  background-color: #dfddc8;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: right;
+  padding-left: 50px;
+  padding-right: 50px;
+  }
+  
+  .list-type5 li:hover{
+  box-shadow:inset -1em 0 #b37922;
+  -webkit-transition: box-shadow 0.5s; /* For Safari 3.1 to 6.0 */
+  transition: box-shadow 0.5s;
+  font-size: larger;
+  }
+  
+  .list-type5 ol li:before {
+  position: absolute;
+  top: -0.3em;
+  left: -0.5em;
+  width: 1.8em;
+  height: 1.2em;
+  font-size: 2em;
+  line-height: 1.2;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  background-color: #b37922;
+  transform: rotate(-20deg);
+  -ms-transform: rotate(-20deg);
+  -webkit-transform: rotate(-20deg);
+  z-index: 99;
+  overflow: hidden;
+  content: counter(li-counter);
+  counter-increment: li-counter;
+  }
+
+.topCountries {
+  float: left;
+  width: 40%;
+}
+
+.topCountries h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.topCountriesOnly {
+  text-align: center;
+  padding-left: 20%;
+  max-width: 800px;
+}
+
+.topCountriesOnly h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.topCountriesOnly .list-type5 ol li{
+  padding-right: 10%;
+}
+
+/* Top 10 Cities List */
+.list-type4{
+  /* width:600px; */
+  margin:0 auto;
+  }
+  .list-type4 ol {
+  list-style-type: none;
+  /* list-style-type: decimal !ie; IE 7- hack */
+  margin: 0;
+  margin-left: 1em;
+  padding: 0;
+  counter-reset: li-counter;
+  }
+
+  .list-type4 ol li{
+  position: relative;
+  margin-bottom: 1.5em;
+  padding: 0.5em;
+  background-color: #dfddc8;
+  font-size: 16px;
+  font-weight: bold;
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: right;
+  }
+  
+  .list-type4 li:hover{
+  box-shadow:inset -1em 0 #7aafaa;
+  -webkit-transition: box-shadow 0.5s; /* For Safari 3.1 to 6.0 */
+  transition: box-shadow 0.5s;
+  font-size: larger;
+  }
+  
+  .list-type4 ol li:before {
+  position: absolute;
+  top: -0.3em;
+  left: -0.5em;
+  width: 1.8em;
+  height: 1.2em;
+  font-size: 2em;
+  line-height: 1.2;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  background-color: #7aafaa;
+  transform: rotate(-20deg);
+  -ms-transform: rotate(-20deg);
+  -webkit-transform: rotate(-20deg);
+  z-index: 99;
+  overflow: hidden;
+  content: counter(li-counter);
+  counter-increment: li-counter;
+  }
+
+
+.topCities {
+  float: right;
+  width: 40%
+}
+
+.topCities h3 {
+  font-size: 24px;
+}
+
+.cname {
+  padding-right: 10px;
+  color: #b37922;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+@media (max-width: 1290px) {
+  .list-type5 ol li{
+    font-size: 14px;
+    padding-right: 20px;
+    text-align: right;
+  }
+
+  .list-type4 ol li{
+    font-size: 14px;
+    padding-right: 20px;
+    text-align: right;
+  }
+
+  .cname {
+    font-size: 16px;
+    text-align: left;
+  }
+
+}
+  #api_page {
+    margin-left: 10%;
+    margin-top: 90px;
+  }
+
+  #line1, #line2, #line3, #line4{
+    width: 800px;
+  }
+
+
+  @media (max-width: 1700px) {
+    #line1, #line2, #line3, #line4{
+      width: 700px;
+    }
+  }
+
+  @media (max-width: 1400px) {
+
+    #ournav {
+      margin-left: 20px;
+    }
+
+    .navbar {  
+      padding: inherit;
+    } 
+  
+    .nav-link{
+      font-size:16px;
+    }
+    
+    .navbar div {  
+      background-color: rgb(66, 66, 66);
+    }
+  
+    #logo {
+      font-size:40px;
+    }
+
+    button{
+      margin-right: 60px;
+    }
+  
+    .navbar-brand {
+      padding: 10px 5px 10px 5px;
+    }
+
+    #line1, #line2, #line3, #line4{
+      width: 600px;
+    }
+    
+  }
+
+  @media (max-width: 1200px) {
+    #line1, #line2, #line3, #line4{
+      width: 800px;
+    }
+  }
+
+  @media (max-width: 1040px) {
+    #ournav {
+      margin-left: 10px;
+    }
+
+    #logo {
+      font-size: 28px;
+      padding-right: 0;
+      margin-left: 2px;
+    }
+
+    .nav-link{
+      font-size:14px;
+    }
+
+    #line1, #line2, #line3, #line4{
+      width: 500px;
+      padding-left: 0px;
+    }
+  }
+
+
+
+
+
+
+

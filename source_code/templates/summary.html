@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Resources</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">  
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href= "../static/css/style.css">
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+    <script> 
+      $(function(){ 
+      $("#header").load("header"); 
+      });
+    </script> 
+</head>
+
+<body>
+<!-- Navbar -->
+<div id="header">
+	<!-- tags from header.html -->
+</div>
+<!-- End Navbar -->
+
+
+<div class="container-fluid bg-3">
+  <div class="container"> 
+    <h3 id="sumpar">Summary</h3><br>
+    <hr>
+    <p id="sumintro">The current US Census Bureau world population estimate in June 2019 shows that the current global population is 7,577,130,400 people on earth, which far exceeds the world population of 7.2 billion from 2015. Our dataset estimate based on UN data shows the world's population surpassing 7.7 billion.
+      <br><br>
+      Many other nations have populations of at least one million, while there are also countries that have just thousands. The smallest population in the world can be found in Vatican City, where only 801 people reside.
+      <br><br>
+      Although the number presented in our project seems very precise, it is important to remember that it is just an estimate. It simply isn't possible to be sure exactly how many people there are on Earth at any one time.
+    </p>
+    <h3 id="sumpar">Data</h3><br>
+    <hr>
+    <p id="sumintro">The analysis is based on the 10 most populated Countries and cities for an 8-year period, and predicts their populations in 2030 and 2050. In addition, the growth rate and population ratio are studied in this project.</p>
+    <p id="sumintro" style="margin-top: 30px;"> Generally, in this analysis an attempt has been made to answer the following questions:</p>
+    <ol id="sumlist">
+      <li>What are the 10 countries with the largest population in 2020?</li>
+      <li>What is the percentage of the top 10 countries compared to the rest of the world in 2020?</li>       
+      <li>What are the top 10 cities with the largest population? in 2020?</li>       
+      <li>Is the largest populated city located in the largest populated country in the world?</li>
+      <li>Predicted population per country from 2020 to 2050 (eg. Australia)?</li>
+    </ol>
+    <h3 id="sumpar">Dataset</h3><br>
+    <hr>
+    <p id="sumintro">For this purpose we used the following websites:</p>
+    <p id="sumintro">Web scrape:<br />
+       <a href="https://worldpopulationreview.com">https://worldpopulationreview.com</a><br />
+       <a href="https://www.iban.com/country-codes">https://www.iban.com/country-codes</a><br />
+      </p>
+    <p id="sumintro">csv download:<br />
+        <a href="https://datacatalog.worldbank.org">https://datacatalog.worldbank.org</a><br />
+      </p>
+    <p id="sumintro">geojson download:<br />
+        <a href="https://github.com/johan/world.geo.json/blob/master/countries.geo.json">https://github.com/johan/world.geo.json/blob/master/countries.geo.json</a>
+      </p>
+        <h3 id="sumpar">Process</h3><br>
+    <hr>
+    <img src="../static/images/WebDiagram.jpg" height="400px" width="1000px">
+    <p id="sumintro" style="margin-top: 50px;">As you can see in our flowchart, after performing the ETL and loading the Data into a MongoDB database, we use Flask to create the API endpoints (point to Endpoints) for accessing the data in JavaScript. 
+    We used D3 library for reading the data from our API endpoints which are in json format, and our Web Application has these (point to Web App) web pages to display our plots and findings.</p>
+    <h3 id="sumpar">Tools</h3>
+    <hr>
+    <p id="sumintro">The following tools have been used in this project:</p>
+    <ul id="sumlist" style="margin-bottom: 200px;">
+      <li>Scrape data/ELT: Python, Pandas</li>
+      <li>Database/ELT: MongoDB</li>
+      <li>API: Flask</li>
+      <li>Visualisation: Javascript (D3, Plotly, Leaflet, <a href="https://webix.com/">Webix </a>, <a href="https://jsuites.net/v3/">jSuites</a>)</li>
+      <li>HTML/CSS: BootStrap</li>
+    </ul>    
+  </div>
+</div>
+</body>
+</html>

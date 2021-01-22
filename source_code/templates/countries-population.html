@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Population World</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin=""/>
+  <!-- Jsuits library for Dropdown -->
+  <link rel="stylesheet" href="https://jsuites.net/v3/jsuites.css" type="text/css" />
+  <!-- Our CSS -->
+  <link rel="stylesheet" href="../static/css/style.css">
+  <!-- Linking to css and javascript file under static folder -->
+  <link rel="stylesheet" type="text/css" href= "../static/css/apiDoc.css">  
+  
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+  <script> 
+    $(function(){ 
+	  $("#header").load("header"); 
+    });
+	</script> 
+</head>
+
+<body>
+<!-- Navbar -->
+<div id="header">
+	<!-- tags from header.html -->
+</div>
+<!-- End Navbar -->
+
+
+  <!-- Data Analysis -->
+  <div class="container-fluid bg-3"> 
+    <div class="container-fluid">    
+        <h3 class="text-center" style="margin-top: 90px;">Country Graphs</h3><br>
+        <hr style="height:3px;border-width:0;background-color:rgba(184, 174, 196, 0.911)">
+        <div id="country" style="text-align: center"><h3>Australia</h3></div>
+        <div class="row">
+        <div class="col-sm-4">
+        <h4 class='page-header'>Select country to display graphs</h4>
+
+        <div id="dropdown" onchange="optionChanged(this.value)"></div>
+        <br><br>
+        </div>
+        </div>
+        </div>
+        </div><br>               
+  <!-- End Data Analysis -->
+
+  <!-- Final Plots -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-6 col-md-12">
+          <div class="thumbnail" style="padding: 5px;border-radius: 5px;width: fit-content;height: fit-content;background-color: rgb(139, 124, 89);">
+            <div id="line1"></div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12">
+          <div class="thumbnail" style="padding: 5px;border-radius: 5px;width: fit-content;height: fit-content;background-color: rgb(139, 124, 89);">
+            <div id="line4"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+          <div class="col-lg-6 col-md-12">
+            <div class="thumbnail" style="padding: 5px;border-radius: 5px;width: fit-content;height: fit-content;background-color: rgb(139, 124, 89);">
+              <div id="line2"></div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <div class="thumbnail" style="padding: 5px;border-radius: 5px;width: fit-content;height: fit-content;background-color: rgb(139, 124, 89);">
+              <div id="line3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+  <br><br>
+  <!-- End Final Plots -->
+<!-- D3 JavaScript -->
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<!-- Jsuits library for Dropdown -->
+<script src="https://jsuites.net/v3/jsuites.js"></script>
+<!-- Plotly JavaScript -->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script> 
+<!-- Our JavaScript -->
+<script type="text/javascript" src="../static/js/logic_dropdown.js"></script>
+<script type="text/javascript" src="../static/js/logic_per_country.js"></script>
+</body>
+</html>

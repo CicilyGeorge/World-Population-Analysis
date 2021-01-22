@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Population World</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin=""/>
+  <!-- Our CSS -->
+  <link rel="stylesheet" href="../static/css/style.css">
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+  <script> 
+    $(function(){ 
+	  $("#header").load("header"); 
+    });
+	</script> 
+</head>
+
+<body>
+<!-- Navbar -->
+<div id="header">
+	<!-- tags from header.html -->
+</div>
+<!-- End Navbar -->
+
+<!-- World Map -->
+<div class="container-fluid bg-3 text-center" style="margin-top: 50px ;">  
+  <div class="container">   
+    <!-- <h3 class="text-center">World Population at a Glance</h3><br> -->
+    <h4 id="total_pop">World Population 2020: </h4>
+    <div class="row">
+      <div class="tabbable">
+        <ul class="nav nav-tabs">
+            <li class="active"><a class="atab" href="#a_tab" data-toggle="tab">Population 2020</a></li>
+            <li><a class="btab" href="#b_tab" data-toggle="tab">Population Density 2019</a></li>
+            <li><a class="ctab" href="#c_tab" data-toggle="tab">Population Growth 2019</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="a_tab">
+                <!-- <h1>Population 2020</h1> -->
+                <acontent><div class="map" id="map"></div></acontent>
+            </div>
+            <div class="tab-pane" id="b_tab">
+                <!-- <h1>Population Density 2019</h1> -->
+                <bcontent><div class="map" id="map_density"></div></bcontent>
+            </div>
+            <div class="tab-pane" id="c_tab">
+              <!-- <h1>Population Growth 2019</h1> -->
+              <ccontent><div class="map" id="map_growth"></div></ccontent>
+          </div>
+        </div>
+    </div>
+    </div>
+  </div>
+  </div>
+  </div><br>
+  
+<!-- End World Map -->
+  <!-- Data Analysis -->
+  <div class="container-fluid bg-3 text-center" style="margin-top: 60px;margin-bottom: 200px;"> 
+    <div class="container"> 
+      <div class="col-md-5 col-sm-12" style="margin-bottom: 50px;">
+        <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr style="text-align: left;">
+            <th>Country</th>
+            <th>2020</th>
+            <th>World Ratio (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>China</td>
+            <td>1442166775</td>
+            <td>18.47</td>
+          </tr>
+          <tr>
+            <td>India</td>
+            <td>1387177258</td>
+            <td>17.70</td>
+          </tr>
+          <tr>
+            <td>United States</td>
+            <td>332041150</td>
+            <td>4.25</td>
+          </tr>
+          <tr>
+            <td>Indonesia</td>
+            <td>275056196</td>
+            <td>3.51</td>
+          </tr>
+          <tr>
+            <td>Pakistan</td>
+            <td>223154088</td>
+            <td>2.83</td>
+          </tr>
+          <tr>
+            <td>Brazil</td>
+            <td>213344896</td>
+            <td>2.73</td>
+          </tr>
+          <tr>
+            <td>Nigeria</td>
+            <td>208873242</td>
+            <td>2.64</td>
+          </tr>
+          <tr>
+            <td>Bangladesh</td>
+            <td>165549495</td>
+            <td>2.11</td>
+          </tr>
+          <tr>
+            <td>Russia</td>
+            <td>145960882</td>
+            <td>1.87</td>
+          </tr>
+          <tr>
+            <td>Mexico</td>
+            <td>129649385</td>
+            <td>1.65</td>
+          </tr>
+          <tr>
+            <td>Rest of the World</td>
+            <td>3314375271</td>
+            <td>42.24</td>
+          </tr>
+        </tbody>
+      </table>  
+     </div> 
+    </div> 
+     <div class="col-md-6 col-sm-12">
+       <h4 style="color: rgb(185, 134, 24); padding-left: 50px;">Percentage of World Population (2020)</h4>
+      <div id="pie" style="padding-left: 20px;"></div>
+    </div>
+  </div>
+  </div>   
+         
+  <!-- End Data Analysis -->
+
+<!-- D3 JavaScript -->
+<script src="https://d3js.org/d3.v5.min.js"></script>
+ <!-- API key -->
+ <script src="../static/js/config.js"></script>
+<!-- Leaflet JavaScript -->
+<script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q==" crossorigin=""></script>
+ <!-- Jsuits library for Dropdown -->
+ <script src="https://jsuites.net/v3/jsuites.js"></script>
+<!-- Plotly JavaScript -->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<!-- Our JavaScript -->
+<script src="../static/js/logic_worldPop.js"></script>
+<script>
+  // $.ajaxSetup ({
+  //     // Disable caching of AJAX responses
+  //     // Used when debugging
+  //     cache: false
+  // });
+
+  $.getScript("../static/js/logic_map.js");
+  $(".atab").click(function() {
+      $.getScript("../static/js/logic_map.js");
+  })
+
+  $(".btab").click(function() {
+      $.getScript("../static/js/logic_map_density.js");
+  })
+  $(".ctab").click(function() {
+      $.getScript("../static/js/logic_map_growth.js");
+  })
+</script> 
+<script type="text/javascript" src="../static/js/logic_Top10.js"></script>
+</body>
+</html>
