@@ -11,7 +11,7 @@
 
 ---
 
-<p align="center">  An analysis of the world's population per country and city 
+<p align="center">  An analysis of the world's population per country and major cities
     <br> 
 </p>
 
@@ -54,28 +54,31 @@ Although the number presented in our project seems very precise, it is important
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
 **Questions to Answer:** <br>
-1.	What are the top 10 countries with the largest population?
-2.	What is the percentage of the top 10 countries compared to the rest of the world?
-3.	What are the top 10 cities with the largest population?
+1.	Which are the top 10 countries with the largest population?
+2.	Which is the percentage of the top 10 countries compared to the rest of the world?
+3.	Which are the top 10 cities with the largest population?
 4.  Is the largest populated city located in the largest populated country in the world?
 5.	Predicted population from 2020 to 2050 (eg. Australia)?
 
 
 ## ✍️ Visualizations <a name = "visualizations"></a>
 
-* World map with 2020 country population details. 
+* World map with 2020 population of Countries. 
 ![Global_Map](images/global_map.PNG)
 
 * Top 10 Countries & Top 10 cities in 2020. 
 ![top_10](images/top_10.PNG)
 
-* Top 10 Countries vs World Population ratio in 2020. 
+* World map with 2019 population density of Countries. 
+![Global_Map](images/global_density_map.PNG)
+
+* Top 10 Countries vs Rest of the World Population ratio in 2020. 
 ![population_ratio](images/population_ratio.PNG)
 
 * Australia population actual & prediction. 
 ![au_population](images/australia_population.PNG)
 
-* Australia sex ratio. 
+* Australia sex at birth ratio. 
 ![au_sex_ration](images/australia_sex_ratio.PNG)
 
 * Australia birth rate. 
@@ -84,7 +87,7 @@ Although the number presented in our project seems very precise, it is important
 * Australia death rate. 
 ![au_deathrate](images/australia_deathrate.PNG)
 
-* Countries population actual &prediction. 
+* Countries population actuals & prediction. 
 ![country_table](images/country_table.PNG)
 
 * Cities population in 2019 & 2020. 
