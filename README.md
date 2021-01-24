@@ -70,7 +70,7 @@ Although the number presented in our project seems very precise, it is important
 ![top_10](images/top_10.PNG)
 
 * World map with 2019 population density of Countries. 
-![Global_Map](images/global_density_map.PNG)
+![Global_Density_Map](images/global_density_map.png)
 
 * Top 10 Countries vs Rest of the World Population ratio in 2020. 
 ![population_ratio](images/population_ratio.PNG)
